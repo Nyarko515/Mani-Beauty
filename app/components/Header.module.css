@@ -1,0 +1,452 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+}
+
+.scrolled {
+  border-bottom: 2px solid var(--color-baby-pink);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.topBar {
+  background: linear-gradient(135deg, var(--color-forest-green), var(--color-forest-green-dark));
+}
+
+.topBarContainer {
+  padding: 0.25rem 1rem;
+}
+
+.topBarRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.7rem, 2vw, 0.875rem);
+  color: white;
+  gap: clamp(0.75rem, 3vw, 1.5rem);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.topBarLink {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  color: white;
+}
+
+.topBarIcon {
+  flex-shrink: 0;
+}
+
+.topBarText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mainNavContainer {
+  padding: 0.25rem 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 54px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: translateY(-2px);
+}
+
+.logoImage {
+  width: clamp(38px, 5vw, 52px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brandTextWrap {
+  line-height: 1;
+}
+
+.brandTop {
+  font-family: Podium, sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-forest-green);
+}
+
+.brandBottom {
+  font-family: railway light, sans-serif;
+  font-size: clamp(0.78rem, 1.8vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #1f1f1f;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.desktopNavList {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.desktopNavItem {
+  position: relative;
+}
+
+.desktopLink {
+  font-weight: 600;
+  color: var(--color-grey-dark);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.navLinkText {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.navLinkText::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-forest-green);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--motion-control-duration) var(--motion-easing);
+}
+
+.desktopNavItem:hover .navLinkText {
+  color: var(--color-orange);
+}
+
+.desktopNavItem:hover .navLinkText::after {
+  transform: scaleX(1);
+}
+
+.desktopLogin {
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background-color: var(--color-forest-green);
+}
+
+.desktopLogin:hover {
+  background-color: var(--color-orange);
+}
+
+.desktopNavItem:hover .desktopLogin .navLinkText {
+  color: #fff;
+}
+
+.desktopLogin .navLinkText {
+  color: #fff;
+}
+
+.desktopLogin .navLinkText::after {
+  display: none;
+}
+
+.mobileMenuBtn {
+  display: block;
+  background: none;
+  padding: 0.5rem;
+  color: var(--color-forest-green);
+  border: none;
+  cursor: pointer;
+}
+
+.mobileOverlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(155deg, #fffaf7 0%, #f8f2ee 55%, #edf5f2 100%);
+  transform: translateY(var(--motion-menu-distance));
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-menu-duration) var(--motion-easing), transform var(--motion-menu-duration) var(--motion-easing), visibility 0s linear var(--motion-menu-duration);
+  z-index: 40;
+  overflow-y: auto;
+}
+
+.mobileOverlayOpen {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.mobileNav {
+  padding: 2rem;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.topBarCart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 34px;
+  height: 30px;
+  color: white;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  display: grid;
+  place-items: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-orange);
+  color: #1f1b18;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mobileNavItem {
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(19, 88, 78, 0.1);
+}
+
+.mobileLink {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-grey-dark);
+  display: block;
+  padding: 0.82rem 0.75rem;
+  text-decoration: none;
+}
+
+.mobileLogin {
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  background-color: var(--color-forest-green);
+  text-align: center;
+}
+
+.mobileLogin:visited {
+  color: #fff;
+}
+
+.mobileLogin:hover,
+.mobileLogin:focus,
+.mobileLogin:active {
+  background-color: var(--color-orange);
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: block;
+  }
+
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .topBarContainer,
+  .mainNavContainer {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .topBarRow {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .topBarLink {
+    width: auto;
+  }
+
+  .topBarText {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .nav {
+    min-height: 50px;
+  }
+
+  .mobileMenuBtn {
+    position: relative;
+    z-index: 70;
+  }
+
+  .mobileOverlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 100%);
+    z-index: 60;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    padding-top: 0;
+  }
+
+  .mobileNav {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  .mobileLink {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBarRow {
+    font-size: 0.68rem;
+    gap: 0.55rem;
+  }
+
+  .topBarIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .logoLink {
+    gap: 0.35rem;
+  }
+
+  .logoImage {
+    width: 40px;
+  }
+
+  .brandTop {
+    font-size: 0.82rem;
+  }
+
+  .brandBottom {
+    font-size: 0.7rem;
+  }
+}
+
+/* Admin-specific header compacting (only active on admin pages)
+   Add the `admin-mode` class to <body> on admin pages so these
+   rules don't affect public pages. */
+@media (max-width: 1023px) {
+  body.admin-mode .topBarContainer,
+  body.admin-mode .mainNavContainer {
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  body.admin-mode .topBarRow {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.05rem;
+  }
+
+  body.admin-mode .topBarLink {
+    width: auto;
+  }
+
+  body.admin-mode .topBarText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  body.admin-mode .nav {
+    min-height: 30px;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+  }
+
+  body.admin-mode .logoImage {
+    width: clamp(8px, 4.5vw, 22px);
+  }
+
+  body.admin-mode .brandTop {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    line-height: 1;
+  }
+
+  body.admin-mode .brandBottom {
+    font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+    line-height: 1;
+  }
+
+  body.admin-mode .mobileNav {
+    padding: 0.25rem 0.5rem 0.5rem;
+  }
+
+  body.admin-mode .mobileLink {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .topBarRow {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .topBarText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

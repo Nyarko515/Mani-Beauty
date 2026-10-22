@@ -1,0 +1,60 @@
+.wrap {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(140deg, #fff9f7 0%, #f5f4f3 100%);
+}
+
+.card {
+  width: min(640px, 100%);
+  background: white;
+  border: 2px solid rgba(240, 165, 134, 0.3);
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.iconBox {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(240, 165, 134, 0.18);
+  color: var(--color-orange-dark);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+}
+
+.text {
+  color: var(--color-grey);
+  margin: 0 0 0.75rem;
+}
+
+.detail {
+  margin: 0 0 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-grey-dark);
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}

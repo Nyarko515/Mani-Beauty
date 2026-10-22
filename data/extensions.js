@@ -1,0 +1,18 @@
+export const defaultExtensions = [
+  { id: 'extension-9379', name: 'Bone Straight', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9379.JPG' },
+  { id: 'extension-9380', name: 'Side-Swept Loose Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9380.JPG' },
+  { id: 'extension-9381', name: 'Voluminous Body Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9381.JPG' },
+  { id: 'extension-9382', name: 'Long Loose Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9382.JPG' },
+  { id: 'extension-9383', name: 'Centre-Part Body Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9383.JPG' },
+  { id: 'extension-9384', name: 'Silky Straight', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9384.JPG' },
+  { id: 'extension-9385', name: 'Natural Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9385.JPG' },
+  { id: 'extension-9386', name: 'Side-Part Body Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9386.JPG' },
+  { id: 'extension-9387', name: 'Deep Body Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9387.JPG' },
+  { id: 'extension-9388', name: 'Side-Part Loose Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9388.JPG' },
+  { id: 'extension-9389', name: 'Loose Deep Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9389.JPG' },
+  { id: 'extension-9390', name: 'Body Wave', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9390.JPG' },
+  { id: 'extension-9399', name: 'Deep Curly Ponytail', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9399.JPG' },
+  { id: 'extension-9400', name: 'Water Wave Ponytail', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9400.JPG' },
+  { id: 'extension-9401', name: 'Kinky Curly Ponytail', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9401.JPG' },
+  { id: 'extension-9402', name: 'Kinky Curly Extension', price: 'Price on request', requiresQuote: true, image: '/images/Extensions/IMG_9402.JPG' },
+]

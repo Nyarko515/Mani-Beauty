@@ -1,0 +1,344 @@
+.hero {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  padding: 0;
+  background: #f6efea;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    margin-top: 87px;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: var(--desktop-hero-ratio);
+    background: transparent;
+  }
+
+}
+
+.heroSlide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 0;
+}
+
+.heroSlideActive {
+  opacity: 1;
+}
+
+.heroSlideTwo {
+  --hero-image: url('/images/mainpage/hero-2.jpg');
+  background-image: url('/images/mainpage/hero-2.jpg');
+}
+
+.heroSlideThree {
+  --hero-image: url('/images/mainpage/hero-3.jpg');
+  background-image: url('/images/mainpage/hero-3.jpg');
+}
+
+.heroSlideFour {
+  --hero-image: url('/images/mainpage/hero-4.jpg');
+  background-image: url('/images/mainpage/hero-4.jpg');
+}
+
+@media (min-width: 1024px) {
+  .heroSlide {
+    display: block;
+    background-size: 100% 100%;
+    background-position: center;
+    transform: none;
+  }
+
+  .heroOverlay {
+    display: none;
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(47, 41, 37, 0.02), rgba(47, 41, 37, 0.08)),
+    linear-gradient(90deg, rgba(255, 250, 247, 0.12), rgba(19, 88, 78, 0.04));
+}
+
+.introSection {
+  position: relative;
+  padding: clamp(1.8rem, 4vw, 3.25rem) 0 clamp(2.25rem, 5vw, 4rem);
+  background: linear-gradient(180deg, #fffaf7 0%, #f8f2ee 100%);
+  overflow: hidden;
+}
+
+.introSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(19, 88, 78, 0.08), transparent 30%),
+    linear-gradient(270deg, rgba(183, 93, 116, 0.08), transparent 34%);
+}
+
+.introInner {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.95rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(19, 88, 78, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--color-forest-green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 34px rgba(47, 41, 37, 0.08);
+}
+
+.introTitle {
+  max-width: 660px;
+  margin: 0 auto 0.75rem;
+  color: var(--color-grey-dark);
+  font-size: clamp(2rem, 4.8vw, 3.65rem);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.introKicker {
+  margin: 0 0 0.85rem;
+  color: var(--color-forest-green);
+  font-size: clamp(0.78rem, 1.8vw, 0.98rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.introKicker span {
+  color: #9d7b69;
+  padding: 0 0.32rem;
+}
+
+.introSubtitle {
+  max-width: 680px;
+  margin: 0 auto 1.6rem;
+  color: var(--color-grey);
+  font-size: clamp(1rem, 2.3vw, 1.18rem);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.introActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.introPrimaryButton,
+.introBlushButton,
+.introGoldButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  padding: 0.68rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(19, 88, 78, 0.18);
+  font-size: 0.9rem;
+  font-weight: 750;
+  box-shadow: 0 12px 24px rgba(47, 41, 37, 0.1);
+}
+
+.introPrimaryButton {
+  background: var(--color-forest-green);
+  color: #fff;
+  border-color: var(--color-forest-green);
+}
+
+.introPrimaryButton:hover {
+  background: var(--color-forest-green-light);
+}
+
+.introBlushButton {
+  background: #fff;
+  color: var(--color-forest-green);
+}
+
+.introBlushButton:hover {
+  background: #f5eee9;
+  color: var(--color-forest-green);
+}
+
+.introGoldButton {
+  background: #fff;
+  color: var(--color-forest-green);
+}
+
+.introGoldButton:hover {
+  background: #f5eee9;
+  color: var(--color-forest-green);
+}
+
+.introTrust {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-grey-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 14px 34px rgba(47, 41, 37, 0.08);
+}
+
+.introTrustStars {
+  display: inline-flex;
+  gap: 0.12rem;
+}
+
+.trustStarIcon {
+  color: #b78947;
+}
+
+.shopSection,
+.reviewsSection,
+.instagramSection {
+  padding: clamp(2.75rem, 6vw, 5rem) 0;
+}
+
+.shopSection { background: #ffffff; }
+.reviewsSection { background: #123f39; }
+.instagramSection { background: #fffaf7; text-align: center; }
+
+.sectionHeading {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionHeading h2 { margin-bottom: 0.75rem; }
+.sectionHeading p { color: var(--color-grey); line-height: 1.7; }
+.reviewsSection .sectionHeading h2,
+.reviewsSection .sectionHeading p { color: white; }
+
+.sectionEyebrow {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: var(--color-forest-green);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.reviewsSection .sectionEyebrow { color: #f8e5b7; }
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  margin: 1.5rem 0;
+}
+
+.instagramGrid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.instagramButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-forest-green);
+  color: white;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    height: clamp(230px, 62vw, 340px);
+    aspect-ratio: auto;
+  }
+
+  .heroSlide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .heroSlide.heroSlideTwo {
+    background-size: contain;
+    background-color: #d6aa87;
+  }
+
+  .introSection {
+    padding: 1.5rem 0 2.35rem;
+  }
+
+  .introBadge {
+    margin-bottom: 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .introTitle {
+    font-size: clamp(1.8rem, 8vw, 2.45rem);
+    line-height: 1.08;
+  }
+
+  .introKicker {
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  .introSubtitle {
+    margin-bottom: 1.2rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .introActions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.55rem;
+  }
+
+  .introPrimaryButton,
+  .introBlushButton,
+  .introGoldButton {
+    width: calc(50% - 0.275rem);
+    min-height: 38px;
+    padding: 0.58rem 0.82rem;
+    font-size: 0.78rem;
+    box-shadow: 0 8px 18px rgba(47, 41, 37, 0.1);
+  }
+
+  .introTrust {
+    width: fit-content;
+    max-width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.86rem;
+  }
+
+  .instagramGrid { grid-template-columns: repeat(2, 1fr); }
+}

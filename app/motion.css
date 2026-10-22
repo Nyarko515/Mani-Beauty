@@ -1,0 +1,82 @@
+:root {
+  --motion-duration: 560ms;
+  --motion-control-duration: 300ms;
+  --motion-menu-duration: 320ms;
+  --motion-menu-distance: -8px;
+  --motion-image-duration: 650ms;
+  --motion-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-distance: 12px;
+}
+
+/* Reveal states only activate after the observer is ready; no-JS content stays visible. */
+.motion-enabled [data-motion-reveal][data-motion-state='pending'] {
+  opacity: 0;
+  transform: translate3d(0, var(--motion-distance), 0);
+  transition:
+    opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+  transition-delay: calc(var(--motion-index, 0) * 55ms);
+  will-change: opacity, transform;
+}
+
+.motion-enabled [data-motion-reveal][data-motion-state='visible'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 767px), (hover: none) {
+  :root {
+    --motion-duration: 420ms;
+    --motion-image-duration: 500ms;
+    --motion-menu-distance: -5px;
+    --motion-distance: 7px;
+  }
+
+  .motion-enabled [data-motion-reveal][data-motion-state='pending'] {
+    transition-delay: 0ms;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  button:active,
+  .btn:active {
+    transform: scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .motion-enabled [data-motion-reveal][data-motion-state='pending'],
+  .motion-enabled [data-motion-reveal][data-motion-state='visible'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  html.site-motion-scope body *,
+  html.site-motion-scope body *::before,
+  html.site-motion-scope body *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Add motion-disabled to <html> for a simple site-wide manual off switch. */
+html.motion-disabled,
+html.motion-disabled *,
+html.motion-disabled *::before,
+html.motion-disabled *::after {
+  animation: none !important;
+  scroll-behavior: auto !important;
+  transition: none !important;
+}
+
+html.motion-disabled [data-motion-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}

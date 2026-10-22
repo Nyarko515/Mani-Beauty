@@ -1,0 +1,127 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Mani Beauty Express backend on AWS Lambda and API Gateway HTTP API.
+
+Parameters:
+  StageName:
+    Type: String
+    Default: prod
+  SupabaseUrl:
+    Type: String
+  SupabaseAnonKey:
+    Type: String
+    NoEcho: true
+  SupabaseServiceRoleKey:
+    Type: String
+    NoEcho: true
+  ResendApiKey:
+    Type: String
+    NoEcho: true
+  MnotifyApiKey:
+    Type: String
+    NoEcho: true
+  AdminNotificationPhone:
+    Type: String
+  PaystackPublicKey:
+    Type: String
+  PaystackSecretKey:
+    Type: String
+    NoEcho: true
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    Architectures:
+      - x86_64
+    MemorySize: 512
+    Timeout: 30
+    Environment:
+      Variables:
+        NODE_ENV: "production"
+        STAGE_NAME: !Ref StageName
+        NEXT_PUBLIC_SITE_URL: "https://manibeauty.co"
+        CORS_ORIGINS: "https://manibeauty.co,https://www.manibeauty.co,https://manibeautylounge.com,https://www.manibeautylounge.com,http://localhost:3000"
+        SUPABASE_STORAGE_BUCKET: "media"
+        NEXT_PUBLIC_SUPABASE_URL: !Ref SupabaseUrl
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: !Ref SupabaseAnonKey
+        SUPABASE_SERVICE_ROLE_KEY: !Ref SupabaseServiceRoleKey
+        ADMIN_EMAIL_ALLOWLIST: "manibeautygh@gmail.com"
+        RESEND_API_KEY: !Ref ResendApiKey
+        BOOKING_NOTIFICATION_FROM: "Mani Beauty <bookings@manibeauty.co>"
+        BOOKING_NOTIFICATION_TO: "manibeautygh@gmail.com"
+        CONTACT_NOTIFICATION_FROM: "Mani Beauty <contact@manibeauty.co>"
+        CONTACT_NOTIFICATION_TO: "manibeautygh@gmail.com"
+        PRODUCT_ORDER_NOTIFICATION_FROM: "Mani Beauty <orders@manibeauty.co>"
+        PRODUCT_ORDER_NOTIFICATION_TO: "manibeautygh@gmail.com"
+        MNOTIFY_API_KEY: !Ref MnotifyApiKey
+        MNOTIFY_SENDER_ID: "Mani Beauty"
+        BOOKING_SMS_TO: !Ref AdminNotificationPhone
+        PRODUCT_ORDER_SMS_TO: !Ref AdminNotificationPhone
+        CONTACT_NOTIFICATION_SMS_TO: !Ref AdminNotificationPhone
+        NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: !Ref PaystackPublicKey
+        PAYSTACK_SECRET_KEY: !Ref PaystackSecretKey
+
+Resources:
+  ManiBeautyHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref StageName
+      CorsConfiguration:
+        AllowCredentials: true
+        AllowHeaders:
+          - Content-Type
+          - Authorization
+          - X-CSRF-Token
+          - X-Requested-With
+        AllowMethods:
+          - GET
+          - POST
+          - PUT
+          - PATCH
+          - DELETE
+          - OPTIONS
+        AllowOrigins:
+          - https://manibeauty.co
+          - https://www.manibeauty.co
+          - https://manibeautylounge.com
+          - https://www.manibeautylounge.com
+          - http://localhost:3000
+
+  ManiBeautyBackendFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: mani-beauty-backend
+      CodeUri: .
+      Handler: server/lambda.handler
+      Events:
+        Root:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ManiBeautyHttpApi
+            Path: /
+            Method: ANY
+            PayloadFormatVersion: "2.0"
+        Proxy:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ManiBeautyHttpApi
+            Path: /{proxy+}
+            Method: ANY
+            PayloadFormatVersion: "2.0"
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        EntryPoints:
+          - server/lambda.js
+        Format: cjs
+        Minify: false
+        Sourcemap: false
+        Target: es2022
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint for the Express backend.
+    Value: !Sub "https://${ManiBeautyHttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}"
+  HealthEndpoint:
+    Description: Health-check endpoint.
+    Value: !Sub "https://${ManiBeautyHttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/api/health"

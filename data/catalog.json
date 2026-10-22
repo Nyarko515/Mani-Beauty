@@ -1,0 +1,353 @@
+{
+  "services": [
+    {
+      "category": "BRAIDING",
+      "tone": "pink",
+      "note": "All braiding services come with extensions",
+      "items": [
+        {
+          "name": "Knotless Braids (6 Rows)",
+          "price": "From GHS 150",
+          "duration": "3.5 hrs",
+          "popular": false,
+          "image": "/images/services/knotless-braids(6 rows).jpg"
+        },
+        {
+          "name": "Knotless Braids (8 Rows)",
+          "price": "From GHS 180",
+          "duration": "4.5 hrs",
+          "popular": false,
+          "image": "/images/services/knotless-braids 8 rows.jpg"
+        },
+        {
+          "name": "Fulani / Goddess Braids (6 rows)",
+          "price": "From GHS 180",
+          "duration": "4.0 hrs",
+          "popular": false,
+          "image": "/images/services/fulani-braids.jpg"
+        },
+        {
+          "name": "Twist / Island Twist(6 rows)",
+          "price": "From GHS 180",
+          "duration": "4.5 hrs",
+          "popular": false,
+          "image": "/images/services/island-twist.jpg"
+        },
+        {
+          "name": "Spiral Braids (6 rows)",
+          "price": "From GHS 180",
+          "duration": "4.5 hrs",
+          "popular": false,
+          "image": "/images/services/spiral-braids(6 rows).jpg"
+        },
+        {
+          "name": "Spiral Goddess / Boho French Curls (8 rows)",
+          "price": "From GHS 200",
+          "duration": "4.5 hrs",
+          "popular": false,
+          "image": "/images/services/spiral-goddess(8 rows).jpg"
+        },
+        {
+          "name": "Distressed/ Butterfly Locs (6 rows)",
+          "price": "From GHS 180",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/butterfly-locs.jpg"
+        },
+        {
+          "name": "Faux / Soft Locs (6 rows)",
+          "price": "From GHS 180",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/faux-locs(6 rows).jpg"
+        },
+        {
+          "name": "Regular Twists/ Passion Twists (8 rows)",
+          "price": "From GHS 180",
+          "duration": "4.5 hrs",
+          "popular": false,
+          "image": "/images/services/regular-twists(8 rows).jpg"
+        },
+        {
+          "name": "Regular Twists/ Passion Twists (6 rows)",
+          "price": "From GHS 180",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/regular-twists(6 rows).jpg"
+        },
+        {
+          "name": "Regular Box Braids (6 rows)",
+          "price": "From GHS 150",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/regular-box-braids(6 rows).jpg"
+        }
+      ]
+    },
+    {
+      "category": "CORNROWS",
+      "tone": "orange",
+      "note": "Professional cornrow styling with precision",
+      "items": [
+        {
+          "name": "Straight Back Cornrows",
+          "price": "From GHS 100",
+          "duration": "2 hrs",
+          "popular": true,
+          "image": "/images/services/straight-back-cornrows.jpg"
+        },
+        {
+          "name": "Cornrows Ponytail",
+          "price": "From GHS 180",
+          "duration": "3 hrs",
+          "popular": true,
+          "image": "/images/services/cornrows-ponytail.jpg"
+        },
+        {
+          "name": "Back Cornrows with Design",
+          "price": "From GHS 200",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/back-cornrows-rasta-design.jpg"
+        },
+        {
+          "name": "Stitch Cornrows",
+          "price": "From GHS 200",
+          "duration": "4 hrs",
+          "popular": true,
+          "image": "/images/services/stitch-cornrows.jpg"
+        },
+        {
+          "name": "Regular Cornrows Rasta",
+          "price": "From GHS 150",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/regular-cornrows-rasta.jpg"
+        },
+        {
+          "name": "Cornrows Rasta (with design)",
+          "price": "From GHS 200",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/cornrows-rasta(with design).jpg"
+        },
+        {
+          "name": "Jayda Wayda/Cornrows Weave",
+          "price": "From GHS 200",
+          "duration": "2.5 hrs",
+          "popular": true,
+          "image": "/images/services/jayda-wayda.jpg"
+        }
+      ]
+    },
+    {
+      "category": "TWISTS & NATURAL STYLES",
+      "tone": "green",
+      "note": "Celebrate your natural beauty",
+      "items": [
+        {
+          "name": "Twists (8-10 rows with extensions)",
+          "price": "From GHS 200",
+          "duration": "3.5 hrs",
+          "popular": true,
+          "image": "/images/services/twists-extensions.jpg"
+        },
+        {
+          "name": "Natural Cornrows / Twists (no extensions)",
+          "price": "From GHS 40",
+          "duration": "1.5 hrs",
+          "popular": true,
+          "image": "/images/services/natural-cornrows.jpg"
+        },
+        {
+          "name": "Natural Styling (ponytails, buns, updos)",
+          "price": "From GHS 50",
+          "duration": "1.5 hrs",
+          "popular": false,
+          "image": "/images/services/natural-styling.jpg"
+        },
+        {
+          "name": "Extra Small Afro Kinky Twists",
+          "price": "From GHS 450",
+          "duration": "12.0 hrs",
+          "popular": false,
+          "image": "/images/services/extra-afro.jpg"
+        }
+      ]
+    },
+    {
+      "category": "WEAVES & WIGS",
+      "tone": "pinkDark",
+      "note": "Expert installation and styling",
+      "items": [
+        {
+          "name": "Frontal Wig Installation & Styling",
+          "price": "From GHS 100",
+          "duration": "1.5 hrs",
+          "popular": true,
+          "image": "/images/services/frontal-wig.jpg"
+        },
+        {
+          "name": "Weave-on (closure)",
+          "price": "From GHS 180",
+          "duration": "3 hrs",
+          "popular": true,
+          "image": "/images/services/weave-closure.jpg"
+        },
+        {
+          "name": "Weave-on (frontal)",
+          "price": "From GHS 250",
+          "duration": "4 hrs",
+          "popular": false,
+          "image": "/images/services/frontal-weave.jpg"
+        },
+        {
+          "name": "Leave-out Sew-in Weave-on",
+          "price": "From GHS 100",
+          "duration": "1.5hrs hrs",
+          "popular": false,
+          "image": "/images/services/leave-out.jpg"
+        }
+      ]
+    },
+    {
+      "category": "HAIR CARE",
+      "tone": "green",
+      "note": "Nourish and maintain your beautiful hair",
+      "items": [
+        {
+          "name": "Wash & Style",
+          "price": "From GHS 35",
+          "duration": "1 hr",
+          "popular": true,
+          "image": "/images/services/Wash-and-Style.jpg"
+        },
+        {
+          "name": "Deep Conditioning / Treatment",
+          "price": "From GHS 80",
+          "duration": "1.5 hrs",
+          "popular": true,
+          "image": "/images/services/deep-conditioning.jpg"
+        },
+        {
+          "name": "Relaxer / Texturizer",
+          "price": [
+            "From GHS 55 (Own Product)",
+            "From GHS 75 (S-Curl / Olive Oil)",
+            "From GHS 85 (1 Mega Growth)",
+            "From GHS 150 (Pink / Short Looks)"
+          ],
+          "duration": "1.5 hrs",
+          "popular": false,
+          "image": "/images/services/relaxer.jpg"
+        },
+        {
+          "name": "Wig Revamp (wash, treat & style)",
+          "price": "From GHS 100",
+          "duration": "2.5 hrs",
+          "popular": false,
+          "image": "/images/services/wig-revamp.jpg"
+        },
+        {
+          "name": "Straightening/ Curling Only",
+          "price": "From GHS 20",
+          "duration": "1.5 hrs",
+          "popular": false,
+          "image": "/images/services/straightening.jpg"
+        },
+        {
+          "name": "Silk Press (including washing)",
+          "price": "From GHS 150",
+          "duration": "2 hrs",
+          "popular": false,
+          "image": "/images/services/silk-press.jpg"
+        },
+        {
+          "name": "Hair Dyeing (Application + Washing)",
+          "price": "From GHS 70(Excluding Product Cost)",
+          "duration": "1 hr",
+          "popular": false,
+          "image": "/images/services/hair-dye.jpg"
+        },
+        {
+          "name": "Finger/Pineapple Waves",
+          "price": "From GHS 100",
+          "duration": "1 hr",
+          "popular": false,
+          "image": "/images/services/finger-waves.jpg"
+        }
+      ]
+    },
+    {
+      "category": "BRAID REFRESH",
+      "tone": "orange",
+      "note": "Keep your braids looking fresh and neat",
+      "items": [
+        {
+          "name": "Braids Rejuvenation (Cleaning /washing/ tightening/ re-braiding and re-styling)",
+          "price": "From GHS 50",
+          "duration": "1 hr",
+          "popular": true,
+          "image": "/images/services/braid-refresh.jpg"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "name": "DOO GRO Mega Thick Formula Hair Oil - 4.5oz",
+      "price": "₵180",
+      "image": "/images/products/DOO GRO ega Thick Formula Hair Oil- 4.5oz.webp"
+    },
+    {
+      "name": "DOO GRO Mega Thick Hair Vitalizer - 10oz",
+      "price": "₵180",
+      "image": "/images/products/DOO GRO Mega Thick Hair Vitalizer - 10oz.webp"
+    },
+    {
+      "name": "DOO GRO Mega Thick Lotion - 8oz",
+      "price": "₵180",
+      "image": "/images/products/DOO GRO Mega Thick Lotion- 8oz.webp"
+    },
+    {
+      "name": "Doo Gro Mega Thick Shampoo - 10oz",
+      "price": "₵180",
+      "image": "/images/products/Doo Gro Mega Thick Shampoo- 10oz.webp"
+    },
+    {
+      "name": "DOO GRO Stimulating Hair Oil - 4.5oz",
+      "price": "₵180",
+      "image": "/images/products/DOO GRO Stimulating Hair Oil- 4.50z.webp"
+    },
+    {
+      "name": "DOO GRO Triple Strength Hair Vitalizer - 4oz",
+      "price": "₵180",
+      "image": "/images/products/DOO GRO Triple Strength Hair Vitalizer - 4oz.webp"
+    },
+    {
+      "name": "Dove Revitalizante Gentle Body Wash, Cherry and",
+      "price": "₵160",
+      "image": "/images/products/Dove Revitalizante Gentle Body Wash, Cherry and.jpg"
+    },
+    {
+      "name": "FHI Heat UNbrush Detangling Brush",
+      "price": "₵380",
+      "image": "/images/products/FHI Heat UNbrush Detangling Brush.jpg"
+    },
+    {
+      "name": "Garnier COCOA BUTTER SUPERCHARGED HAIR",
+      "price": "₵200",
+      "image": "/images/products/Garnier COCOA BUTTER SUPERCHARGED HAIR.jpg"
+    },
+    {
+      "name": "Garnier Ultimate Blends Soothing Coconut Hair",
+      "price": "₵200",
+      "image": "/images/products/Garnier Ultimate Blends Soothing Coconut Hair.jpg"
+    },
+    {
+      "name": "Godrej Nupur Mehendi Pure Henna Powder 9",
+      "price": "₵250",
+      "image": "/images/products/Godrej Nupur Mehendi Pure Henna Powder 9.jpg"
+    }
+  ]
+}

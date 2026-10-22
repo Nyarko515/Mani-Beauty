@@ -1,0 +1,59 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  Options -MultiViews
+
+  # Always use HTTPS and one canonical hostname. This also redirects both
+  # HTTPS variants of the former manibeautylounge.com domain.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^manibeauty\.co$ [NC]
+  RewriteRule ^ https://manibeauty.co%{REQUEST_URI} [R=301,L]
+
+  # Serve route-specific initial HTML so crawlers receive each page's own
+  # title, description, robots directive, and canonical URL before JavaScript.
+  RewriteRule ^home/?$ /_seo/home.html [L]
+  RewriteRule ^about/?$ /_seo/about.html [L]
+  RewriteRule ^booking/?$ /_seo/booking.html [L]
+  RewriteRule ^checkout/?$ /_seo/checkout.html [L]
+  RewriteRule ^cart/?$ /_seo/cart.html [L]
+  RewriteRule ^contact/?$ /_seo/contact.html [L]
+  RewriteRule ^hair-extensions/?$ /_seo/hair-extensions.html [L]
+  RewriteRule ^payment-result/?$ /_seo/payment-result.html [L]
+  RewriteRule ^privacy/?$ /_seo/privacy.html [L]
+  RewriteRule ^products/?$ /_seo/products.html [L]
+  RewriteRule ^reviews/?$ /_seo/reviews.html [L]
+  RewriteRule ^services/?$ /_seo/services.html [L]
+  RewriteRule ^sitemap/?$ /_seo/sitemap.html [L]
+  RewriteRule ^terms/?$ /_seo/terms.html [L]
+  RewriteRule ^locations/?$ /_seo/locations.html [L]
+  RewriteRule ^locations/atomic/?$ /_seo/locations--atomic.html [L]
+  RewriteRule ^locations/haatso/?$ /_seo/locations--haatso.html [L]
+  RewriteRule ^locations/legon/?$ /_seo/locations--legon.html [L]
+  RewriteRule ^locations/madina/?$ /_seo/locations--madina.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule . /index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Browser protections for the static production site. The Express API sends
+  # the equivalent headers itself, but Apache must protect HTML and assets.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.paystack.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.amazonaws.com https://api.paystack.co; frame-src https://js.paystack.co https://checkout.paystack.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(self)"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+
+  # Do not expose legacy browser capabilities which can weaken the CSP.
+  Header always unset X-Powered-By
+</IfModule>
+
+ErrorDocument 404 /index.html

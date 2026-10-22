@@ -1,0 +1,35 @@
+.loadingWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.loadingInner {
+  text-align: center;
+}
+
+.loadingText {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--color-forest-green);
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+}
+
+.adminContent {
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+@media (max-width: 1023px) {
+  .adminContent {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .adminContent {
+    padding-top: 0;
+  }
+}

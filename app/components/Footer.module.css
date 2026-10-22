@@ -1,0 +1,213 @@
+.footer {
+  background: linear-gradient(to bottom, var(--color-grey-light), white);
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.mainWrap {
+  padding: clamp(1.5rem, 3vw, 3rem) 1rem;
+}
+
+.mainGrid {
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.brandTitle {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.brandGradient {
+  background: linear-gradient(135deg, var(--color-forest-green-light), var(--color-forest-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.brandSolid {
+  color: var(--color-forest-green);
+  font-weight: 900;
+}
+
+.aboutText {
+  color: var(--color-grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: clamp(0.9rem, 1.5vw, 0.95rem);
+}
+
+.socialRow {
+  display: flex;
+  gap: clamp(0.75rem, 1vw, 1rem);
+}
+
+.socialIcon {
+  width: clamp(35px, 8vw, 40px);
+  height: clamp(35px, 8vw, 40px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px) scale(1.05);
+  opacity: 0.9;
+}
+
+.socialPink {
+  background: var(--color-baby-pink-dark);
+}
+
+.socialOrange {
+  background: var(--color-orange-dark);
+}
+
+.socialGreen {
+  background: var(--color-forest-green);
+}
+
+.sectionTitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-grey-dark);
+}
+
+.listReset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quickLinkItem {
+  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.footerLink {
+  color: var(--color-grey);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  transition: var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--color-forest-green);
+}
+
+.contactItem {
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  margin-bottom: 1rem;
+  color: var(--color-grey);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+}
+
+.iconGreen {
+  color: var(--color-forest-green);
+}
+
+.iconOrange {
+  color: var(--color-orange);
+}
+
+.iconPink {
+  color: var(--color-baby-pink);
+}
+
+.mailLink {
+  word-break: break-all;
+}
+
+.hoursCard {
+  margin-top: 1.5rem;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: var(--color-forest-green);
+  border-radius: 8px;
+  border: 2px dashed var(--color-forest-green-light);
+}
+
+.hoursTitle {
+  font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hoursIcon {
+  flex-shrink: 0;
+}
+
+.hoursText {
+  font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.bottomBar {
+  border-top: 1px solid var(--color-grey-light);
+  background: white;
+}
+
+.bottomWrap {
+  padding: clamp(1rem, 2vw, 1.5rem) 1rem;
+}
+
+.bottomRow {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  color: var(--color-grey);
+}
+
+.copyText {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bottomLink {
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+}
+
+@media (min-width: 640px) {
+  .bottomRow {
+    flex-direction: row;
+  }
+}

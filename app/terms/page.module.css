@@ -1,0 +1,18 @@
+.page {
+  background: var(--color-grey-light);
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.text {
+  color: var(--color-grey);
+  max-width: 850px;
+}

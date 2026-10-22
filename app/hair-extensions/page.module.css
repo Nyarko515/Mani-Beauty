@@ -1,0 +1,22 @@
+.page { background: #ffffff; }
+.cartNotice { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 1rem 1.25rem; border-radius: 8px; background: #10b981; color: white; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.16); }
+.hero { position: relative; height: clamp(360px, 28vw, 430px); padding: 0; overflow: hidden; background: #1f1b18; touch-action: pan-y; display: grid; grid-template-columns: .9fr 1.25fr .9fr 1.25fr .9fr; gap: 0; }
+.hero img { position: static; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 1; filter: saturate(.85); transition: opacity .7s ease; }
+.hero img.heroImageActive,
+.hero img.heroImageNext { opacity: 1; }
+.heroDots { position: absolute; left: 50%; bottom: 1rem; z-index: 2; display: none; align-items: center; gap: .45rem; transform: translateX(-50%); }
+.heroDot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: none; }
+.heroDotActive { width: 9px; height: 9px; background: var(--color-forest-green); }
+.shopSection { padding: clamp(3rem, 6vw, 5rem) 0; }
+.sectionHeading { max-width: 720px; margin: 0 auto 2rem; text-align: center; }
+.sectionHeading p { color: var(--color-grey); line-height: 1.7; }
+.cartLink { display: inline-block; margin-top: .25rem; padding: .65rem 1rem; border-radius: 999px; background: var(--color-forest-green); color: white; font-weight: 700; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.card { background: #fffaf7; border: 1px solid rgba(19,88,78,.1); overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; transition: transform var(--motion-image-duration) var(--motion-easing); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .card:hover img { transform: scale(1.025); } }
+.cardBody { padding: 1rem; }
+.cardBody h3 { margin-bottom: .35rem; font-size: clamp(1.1rem, 2vw, 1.35rem); }
+.cardBody p { color: var(--color-forest-green); font-weight: 700; }
+.addButton { display: inline-block; padding: .65rem .9rem; border: 1px solid var(--color-forest-green); border-radius: 999px; background: var(--color-forest-green); color: white; font-size: .88rem; font-weight: 700; }
+@media (max-width: 760px) { .cartNotice { top: 12px; left: 50%; right: auto; width: max-content; max-width: calc(100% - 2rem); transform: translateX(-50%); font-size: .88rem; } .hero { display: block; height: 460px; } .hero img { position: absolute; inset: 0; width: 100%; object-position: center top; opacity: 0; filter: none; } .hero img.heroImageActive { opacity: 1; } .hero img.heroImageNext { opacity: 0; } .heroDots { display: flex; } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; } .cardBody { padding: .8rem; } }

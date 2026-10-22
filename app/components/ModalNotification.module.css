@@ -1,0 +1,315 @@
+/* Modal Notification Styles */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease-out;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.closeButton:active {
+  transform: scale(0.95);
+}
+
+/* Content Wrapper */
+.content {
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 2.5rem 1rem 1rem;
+  }
+}
+
+/* Icon Wrapper */
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.headerSuccess {
+  background-color: #d1fae5;
+}
+
+.headerError {
+  background-color: #fee2e2;
+}
+
+.headerLoading {
+  background-color: #dbeafe;
+}
+
+.spinner {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Title */
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Message */
+.message {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Reference Box */
+.referenceBox {
+  background-color: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.referenceLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.referenceValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+/* Details List */
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.detailItem {
+  font-size: 0.95rem;
+  color: #6b7280;
+  padding: 0.75rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.detailItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Actions Container */
+.actionsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .actionsContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Action Buttons */
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.actionButtonPrimary {
+  background: linear-gradient(135deg, #ff6b9d, #c41e3a);
+  color: white;
+}
+
+.actionButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
+}
+
+.actionButtonPrimary:active {
+  transform: translateY(0);
+}
+
+.actionButtonSecondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: 2px solid #e5e7eb;
+}
+
+.actionButtonSecondary:hover {
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.actionButtonSecondary:active {
+  transform: scale(0.98);
+}
+
+/* Modal Success Style */
+.modalSuccess {
+  border-top: 5px solid #10b981;
+}
+
+/* Modal Error Style */
+.modalError {
+  border-top: 5px solid #ef4444;
+}
+
+/* Modal Loading Style */
+.modalLoading {
+  border-top: 5px solid #3b82f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .modal {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .content {
+    padding: 2rem 1rem 0.75rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .message {
+    font-size: 0.9rem;
+  }
+
+  .referenceValue {
+    font-size: 1.1rem;
+  }
+
+  .actionButton {
+    min-width: 100px;
+    padding: 0.65rem 1.25rem;
+  }
+}

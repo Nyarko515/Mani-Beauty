@@ -1,0 +1,521 @@
+.page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+/* Reduce top gap under sticky header on smaller screens */
+@media (max-width: 1023px) {
+  .page {
+    padding-top: 0.5rem;
+  }
+
+  .headerCard {
+    margin-top: 0.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: 0.4rem;
+  }
+
+  .headerCard {
+    margin-top: 0;
+  }
+}
+
+.containerWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  background-color: #fff;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--color-baby-pink);
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.brandTitle {
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+}
+
+.brandGradient {
+  background: linear-gradient(135deg, var(--color-baby-pink), var(--color-orange));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brandSolid {
+  color: var(--color-forest-green);
+}
+
+.brandSub {
+  color: var(--color-grey-dark);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.catalogButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  background-color: var(--color-orange);
+  color: #fff;
+  border: 2px solid var(--color-orange);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  white-space: nowrap;
+}
+
+.catalogButton:hover {
+  background-color: var(--color-orange-dark);
+  border-color: var(--color-orange-dark);
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  background-color: #fff;
+  color: var(--color-forest-green);
+  border: 2px solid var(--color-forest-green);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-forest-green);
+  color: #fff;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 40vw, 200px), 1fr));
+  gap: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.statCard {
+  background-color: #fff;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.statCardOrange {
+  border: 2px solid rgba(255, 140, 66, 0.2);
+}
+
+.statCardPink {
+  border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+.statCardGreen {
+  border: 2px solid rgba(34, 139, 34, 0.2);
+}
+
+.statCardRed {
+  border: 2px solid rgba(255, 107, 107, 0.25);
+}
+
+.statIcon {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: var(--color-grey-dark);
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 900;
+}
+
+.statValueOrange {
+  color: var(--color-orange);
+}
+
+.statValuePink {
+  color: var(--color-baby-pink);
+}
+
+.statValueGreen {
+  color: var(--color-forest-green);
+}
+
+.statValueRed {
+  color: #ff6b6b;
+}
+
+.filtersCard {
+  background-color: #fff;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.searchGroup {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  flex: 1;
+  min-width: clamp(150px, 50vw, 300px);
+}
+
+.filterIcon {
+  color: var(--color-orange);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  border: 2px solid var(--color-light-grey);
+  border-radius: 0.5rem;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-family: inherit;
+  min-width: 100px;
+  box-sizing: border-box;
+}
+
+.filterButtonsWrap {
+  display: flex;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
+  background-color: #f5f5f5;
+  color: var(--color-grey-dark);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.filterButtonActive {
+  background-color: var(--color-orange);
+  color: #fff;
+}
+
+.tableCard {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  min-width: 600px;
+}
+
+.tableHeaderRow {
+  background-color: #f9f5f0;
+  border-bottom: 2px solid var(--color-baby-pink);
+}
+
+.tableHeadCell {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-grey-dark);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+}
+
+.actionsHead {
+  text-align: center;
+}
+
+.tableRow {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: #f9f9f9;
+}
+
+.tableCell {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.actionsCell {
+  text-align: center;
+}
+
+.cellText {
+  color: var(--color-grey-dark);
+}
+
+.clientName {
+  font-weight: 600;
+  color: var(--color-grey-dark);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+}
+
+.clientMeta {
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: #999;
+  word-break: break-word;
+}
+
+.serviceText {
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+}
+
+.bookingNote {
+  margin-top: 0.35rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: var(--color-grey);
+  white-space: pre-line;
+}
+
+.bookingNoteLink {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: var(--color-orange-dark);
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.bookingPhotoWrap {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.bookingPhotoLink {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bookingPhotoThumb {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+  background: #fafafa;
+}
+
+.dateRow,
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, 1vw, 0.5rem);
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+}
+
+.timeRow {
+  margin-top: 0.25rem;
+}
+
+.dateIcon {
+  color: var(--color-baby-pink);
+  flex-shrink: 0;
+}
+
+.timeIcon {
+  color: var(--color-orange);
+  flex-shrink: 0;
+}
+
+.statusSelect {
+  padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  text-transform: capitalize;
+  min-width: 100px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.statusPending {
+  border-color: var(--color-orange);
+  background-color: rgba(255, 140, 0, 0.1);
+  color: var(--color-orange);
+}
+
+.statusCompleted {
+  border-color: var(--color-forest-green);
+  background-color: rgba(34, 139, 34, 0.1);
+  color: var(--color-forest-green);
+}
+
+.statusCancelled {
+  border-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+}
+
+.statusDefault {
+  border-color: #ddd;
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.deleteButton {
+  padding: clamp(0.4rem, 1.5vw, 0.5rem);
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: none;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton:hover {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.emptyState {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  color: var(--color-grey-dark);
+}
+
+.emptyTitle {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #999;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .headerCard {
+    align-items: flex-start;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .catalogButton,
+  .logoutButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .filtersCard {
+    align-items: stretch;
+  }
+
+  .searchGroup {
+    min-width: 100%;
+  }
+
+  .filterButtonsWrap {
+    width: 100%;
+  }
+
+  .filterButton {
+    flex: 1 1 0;
+  }
+
+  .statusSelect {
+    min-width: 100%;
+  }
+
+  .actionsCell {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0.75rem 0;
+  }
+
+  .containerWrap {
+    padding: 0 0.75rem;
+  }
+
+  .headerCard,
+  .filtersCard {
+    padding: 0.85rem;
+    border-radius: 0.6rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .tableHeadCell,
+  .tableCell {
+    padding: 0.65rem 0.5rem;
+  }
+}

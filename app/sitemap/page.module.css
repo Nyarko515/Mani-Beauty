@@ -1,0 +1,24 @@
+.page {
+  background: white;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.link {
+  color: var(--color-forest-green);
+  font-weight: 600;
+}
+
+.link:hover {
+  color: var(--color-orange);
+}
